@@ -19,6 +19,7 @@ const StyledSignupStudent = styled.div`
     }
     .form_wrapper {
       display: flex;
+      column-gap: 24px;
       width: 100%;
       form {
         width: 100%;
@@ -71,6 +72,12 @@ const StyledSignupStudent = styled.div`
           }
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .form_wrapper {
+      flex-direction: column;
     }
   }
 `;
