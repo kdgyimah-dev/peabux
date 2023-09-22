@@ -112,7 +112,7 @@ export default function SignupStudent() {
         studentNumber: values.studentNumber,
         idNumber: values.idNumber,
       };
-      const storedData = localStorage.getItem("datas");
+      const storedData = localStorage.getItem("datas") || "";
       const userData = JSON.parse(storedData);
       userData.users.push(data);
       localStorage.setItem("datas", JSON.stringify(userData));

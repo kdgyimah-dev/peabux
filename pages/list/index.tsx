@@ -54,11 +54,27 @@ const StyledSignupStudent = styled.div`
   }
 `;
 
+interface userDataProps {
+  length?: number;
+  users: {
+    teacherNumber?: number;
+    firstname: string;
+    lastname: string;
+    idNumber: number;
+    dob: string;
+    title?: string;
+    salary?: number;
+    [key: string]: string | number | undefined;
+  }[];
+}
+
 export default function SignupStudent() {
   /**
    * states
    */
-  const [userData, setUserData] = useState([{}]);
+  const [userData, setUserData] = useState<userDataProps | null>({
+    users: [{ firstname: "", lastname: "", idNumber: 0, dob: "" }],
+  });
 
   /**
    * effect
@@ -66,10 +82,12 @@ export default function SignupStudent() {
   useEffect(() => {
     // var userDataString = localStorage.getItem("datas");
     // const userData = JSON.parse(userDataString);
-    const storedData = localStorage.getItem("datas");
+    const storedData = localStorage.getItem("datas") || "";
     const parsedData = JSON.parse(storedData);
     setUserData(parsedData);
     console.log(userData);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -84,7 +102,7 @@ export default function SignupStudent() {
             description="Find teachers and student "
           />
           <div className="data_wrapper">
-            {(!userData || !userData?.length <= 0) && (
+            {(!userData || userData?.length === 0) && (
               <p>
                 No details added here yet.{" "}
                 <Link href="/" className="navigator">

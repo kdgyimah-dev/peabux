@@ -139,7 +139,7 @@ export default function SignupTeacher() {
         idNumber: values.idNumber,
         salary: values.salary,
       };
-      const storedData = localStorage.getItem("datas");
+      const storedData = localStorage.getItem("datas") || "";
       const userData = JSON.parse(storedData);
       userData.users.push(data);
       localStorage.setItem("datas", JSON.stringify(userData));
