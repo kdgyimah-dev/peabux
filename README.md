@@ -30,9 +30,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 3. Registrations can be viewed on [http://localhost:3000/list](http://localhost:3000/list).
 
 ### Process
-Since no 3rd backend service or infrastructure is being used, this app uses Local Storage for mocking the process of storing and retrieving data to give a real-time feel.
+Since no 3rd party backend service or infrastructure is being used, this app uses Local Storage for mocking the process of storing and retrieving data to give a real-time feel.
 
-For added context: Local storage is not used in large scale or data-heavy applications since it has a limit of 10 megabytes but for given this project scope it is expedient to use a solution that makes sense for the given context which is why Local Storage was chosen.
+For added context: Local storage is not used in large scale or data-heavy applications since it has a limit of 10 megabytes. Given this project scope it is expedient to use a solution that makes sense for the given context which is why Local Storage was chosen.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
