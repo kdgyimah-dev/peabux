@@ -70,15 +70,15 @@ export default function Home() {
           <span className="txt_">Peabux</span>
         </div>
         <div className="btns">
-          <Link href="/signup/teacher" className="btn">
+          <Link href="/signup/teacher" className="btn" data-testid="teacher-link">
             Sign up as teacher
           </Link>
-          <Link href="/signup/student" className="btn outlined">
+          <Link href="/signup/student" className="btn outlined" data-testid="student-link">
             Sign up as student
           </Link>
         </div>
         <div>
-          <Link href="/list" className="txt_">
+          <Link href="/list" className="txt_" data-testid="view-registrations">
             View Registrations
           </Link>
         </div>
